@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fale conosco</title>
+    <title>Formulário de Contato</title>
 </head>
 <body>
-   <h1>4002-8922</h1> 
+    <h1>Formulário de Contato</h1>
+
+    <form id="formularioContato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" ><br>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" ><br>
+
+        <label for="telefone">Telefone de Contato:</label>
+        <input type="tel" id="telefone" ><br>
+        <label for="telefone">Email:</label>
+        <input type="string" id="email" ><br>
+
+        <button type="submit">Enviar<onclick></onclick> </button>   
+    </form>
+    <div id="mensagem" style="display: none;">
+        <p><h1>Seus dados foram enviados. Em breve entraremos em contato</h1></p>
+    </div>
+    <script>
+        document.getElementById("formularioContato").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+    
+            var nome = document.getElementById("nome").value;
+            var dataNascimento = document.getElementById("dataNascimento").value;
+            var telefone = document.getElementById("telefone").value;
+
+            document.getElementById("mensagem").style.display = "block";
+        });
+    </script>
+
 </body>
 </html>
